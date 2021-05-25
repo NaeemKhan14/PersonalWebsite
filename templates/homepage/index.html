@@ -1,0 +1,156 @@
+{% extends 'base_template.html' %}
+{% block title %}Naeem Khan | Portfolio{% endblock title %}
+{% block content %}
+    {% load static %}
+    <section class="s2">
+        <div class="main-container">
+            <div class="about-wrapper">
+                <div class="about-left">
+                    <div class="avatar-rnd">
+                        <img src="{% static 'img/face.jpg' %}" alt="avatar">
+                    </div>
+                </div>
+                <div class="about-right">
+                    <p>
+                    <h1>Hi, I'm Naeem Khan!</h1>
+                    <h1>I am a <span class="highlight-text">full-stack developer</span> and <span
+                            class="highlight-text">network & security</span> enthusiast.</h1>
+                    </p>
+                    <span><a target="_blank" href="https://github.com/NaeemKhan14/"><img id="toggle-color"
+                                src="{% static 'img/icons/github.svg' %}" alt="Github"></a></span>
+                    <span><a target="_blank" href="https://www.linkedin.com/in/naeem-khan-/"><img id="toggle-color"
+                                src="{% static 'img/icons/linkedin.svg' %}" alt="Linkedin"></a></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class='s3'>
+        <div class="main-container">
+            <div class="skills-wrapper">
+                <div class="skills-intro">
+                    <h1>Skills</h1>
+                    <p>Here’s a list of things I am most proficient in. For a full list, please check out my <a
+                            href="#">CV here</a>.</p>
+                </div>
+                <div class="skill-cards-wrapper">
+                    <div class="skill-card-body">
+                        <div class="skill-card-title">
+                            <h3>Front End Development</h3>
+                        </div>
+                        <div class="skill-card-icons">
+                            <img src="{% static 'img/icons/skills/html.svg' %}" alt="html-icon">
+                            <img src="{% static 'img/icons/skills/css.svg' %}" alt="css-icon">
+                            <img src="{% static 'img/icons/skills/js.svg' %}" alt="js-icon">
+                        </div>
+                        <div class="skill-card-desc">
+                            I have worked on several different website projects and I have experience building websites
+                            from scratch using HTML, CSS and JavaScript.
+                        </div>
+                    </div>
+                    <div class="skill-card-body">
+                        <div class="skill-card-title">
+                            <h3>Back End Development</h3>
+                        </div>
+                        <div class="skill-card-icons">
+                            <img src="{% static 'img/icons/skills/python.svg' %}" alt="python-icon">
+                            <img src="{% static 'img/icons/skills/php.svg' %}" alt="php-icon">
+                            <img src="{% static 'img/icons/skills/csharp.svg' %}" alt="csharp-icon">
+                        </div>
+                        <div class="skill-card-desc">
+                            Whether it is website or software development, Python is my go-to programming language. I
+                            also enjoy working with PHP.
+                        </div>
+                    </div>
+                    <div class="skill-card-body">
+                        <div class="skill-card-title">
+                            <h3>Database Management</h3>
+                        </div>
+                        <div class="skill-card-icons">
+                            <img src="{% static 'img/icons/skills/postgresql.svg' %}" alt="postgresql-icon">
+                            <img src="{% static 'img/icons/skills/firebase.svg' %}" alt="firebase-icon">
+                            <img src="{% static 'img/icons/skills/mysql.svg' %}" alt="mysql-icon">
+                        </div>
+                        <div class="skill-card-desc">
+                            For relational database management, I use MySQL and PostgreSQL extensively. I also have
+                            experience working with Google’s Firebase and Firestore.
+                        </div>
+                    </div>
+                    <div class="skill-card-body">
+                        <div class="skill-card-title">
+                            <h3>Linux Operating Systems</h3>
+                        </div>
+                        <div class="skill-card-icons">
+                            <img src="{% static 'img/icons/skills/centos.svg' %}" alt="centos-icon">
+                            <img src="{% static 'img/icons/skills/ubuntu.svg' %}" alt="ubuntu-icon">
+                            <img src="{% static 'img/icons/skills/kali.svg' %}" alt="kali-icon">
+                        </div>
+                        <div class="skill-card-desc">
+                            I have worked with a number of different linux distributions for several years and I’m
+                            familiar with both desktop and server versions of many linux distros.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="s4">
+        <div class="main-container">
+            <div class="projects-wrapper">
+                <div class="projects-top">
+                    <div class="projects-title">
+                        <h1>Selected Projects</h1>
+                    </div>
+                    <div class="projects-description">
+                        <p>Here are a few projects that I have worked on. <a href="#">Click here</a> to view the full
+                            list of projects.</p>
+                    </div>
+                </div>
+                <div class="project-tiles">
+                    <div class="projects-row1">
+                        <div class="project-1">
+
+                        </div>
+                        <div class="project-2">
+
+                        </div>
+                    </div>
+                    <div class="projects-row2">
+                        <div class="project-3">
+                        </div>
+                        <div class="project-4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class='s5'>
+        <div class="main-container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h1 style="margin:0;">Contact Me</h1>
+                    <p><h5 style="margin-top: 0;">Have a query? Contact me!</h5></p>
+                    <div class="info">
+                        <ul>
+                            <li><span class="material-icons material-icons-round info-icon">call</span> +971526698242
+                            </li>
+                            <li><span class="material-icons material-icons-round info-icon">mail_outline</span>
+                                naeemukhan14@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form action="#">
+                        <input type="text" name="full_name" placeholder="Full name" />
+                        <input type="email" name="email_field" placeholder="John.doe@example.com" />
+                        <input type="tel" name="phone_num" placeholder="+971526698242" />
+                        <textarea name="user_msg" placeholder="Enter your message here..." cols="15"
+                            rows="5"></textarea>
+                        <br>
+                        <input type="submit" value="Submit" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
