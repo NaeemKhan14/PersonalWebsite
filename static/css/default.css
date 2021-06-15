@@ -611,7 +611,7 @@ Media Queries
     }
     .overlay-card-content>img {
         width: 80%;
-        overflow: none;
+        overflow: unset;
     }
     .card-body>button>img {
         max-height: 400px;

@@ -203,12 +203,14 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form action="#">
-                        <input type="text" name="full_name" placeholder="Full name"/>
-                        <input type="email" name="email_field" placeholder="John.doe@example.com"/>
-                        <input type="tel" name="phone_num" placeholder="+971526698242"/>
-                        <textarea name="user_msg" placeholder="Enter your message here..." cols="15"
-                                  rows="5"></textarea>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form }}
+{#                        <input type="text" name="full_name" placeholder="Full name"/>#}
+{#                        <input type="email" name="email_field" placeholder="John.doe@example.com"/>#}
+{#                        <input type="tel" name="phone_num" placeholder="+971526698242"/>#}
+{#                        <textarea name="user_msg" placeholder="Enter your message here..." cols="15"#}
+{#                                  rows="5"></textarea>#}
                         <br>
                         <input type="submit" value="Submit"/>
                     </form>
