@@ -8,67 +8,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Roboto&family=Merriweather&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+          rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/default.css' %}">
-    <title>{% block title %}{% endblock title %}</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Naeem Khan</title>
 </head>
 
 <body>
-    <section class="s1">
-        <div class="main-container">
-            <div class="navi-bar">
-                <div class="nav-left">
-                    <a class="btnNav active" href="#">Home</a>
-                    <a class="btnNav" href="#">CV</a>
-                    <a class="btnNav" href="#">Projects</a>
+<section class="s1">
+    <div class="main-container">
+        <div class="navi-bar">
+            <div class="nav-left">
+                <a class="btnNav active" href="#">Home</a>
+                <a class="btnNav" href="{% static 'files/CV_Naeem_Khan.pdf' %}">CV</a>
+                <a class="btnNav" href="#projects-sec">Projects</a>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="nav-right">
+                <p>Dark Theme: </p>
+                <p style="margin-left: 10px; margin-top: 5px">
+                    <label class="switch">
+                        <input id="theme-toggle" type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+{% block content %}
+{% endblock content %}
+<section class='s6'>
+    <div class="main-container">
+        <div class="footer-wrapper">
+            <div class="footer-left">
+                <p>Website created by Naeem Khan.</p>
+                <p>Built with <a href="https://www.djangoproject.com/">Django</a> and Hosted on <a
+                        href="https://www.heroku.com/">Heroku</a>.</p>
+                <p style="font-size: 9px;">© 2020-2021 Naeem Khan. All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <div class="footer-right-col1">
+                    <a href="http://naeemkhan.dev">naeemkhan.dev</a>
                 </div>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-                <div class="nav-right">
-                    <p>Dark Theme: </p>
-                    <p style="margin-left: 10px; margin-top: 5px">
-                        <label class="switch">
-                            <input id="theme-toggle" type="checkbox">
-                            <span class="slider round"></span>
-                        </label>
-                    </p>
+                <div class="footer-right-col2">
+                    <a target="_blank" href="https://github.com/NaeemKhan14/">Github</a>
+                    <a target="_blank" href="https://www.linkedin.com/in/naeem-khan-">Linkedin</a>
+                    <a href="{% static 'files/CV_Naeem_Khan.pdf' %}">CV</a>
                 </div>
             </div>
         </div>
-    </section>
-    {% block content %}
-    {% endblock content %}
-    <section class='s6'>
-        <div class="main-container">
-            <div class="footer-wrapper">
-                <div class="footer-left">
-                    <p>Website created by Naeem Khan.</p>
-                    <p>Built with <a href="https://www.djangoproject.com/">Django</a> and Hosted on <a
-                            href="https://www.heroku.com/">Heroku</a>.</p>
-                    <p style="font-size: 9px;">© 2020-2021 Naeem Khan. All rights reserved.</p>
-                </div>
-                <div class="footer-right">
-                    <div class="footer-right-col1">
-                        <a href="http://naeemkhan.dev">naeemkhan.dev</a>
-                    </div>
-                    <div class="footer-right-col2">
-                        <a target="_blank" href="https://github.com/NaeemKhan14/">Github</a>
-                        <a target="_blank" href="https://www.linkedin.com/in/naeem-khan-">Linkedin</a>
-                        <a href="">Sitemap</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <button onclick="topFunction()" id="goto-top-btn" title="Go to top"><img src="{% static 'img/icons/round_expand_less_black_24dp.png' %}" alt="goto-top-btn"></button>
-    </section>
-
-    <script src="{% static 'js/dark-theme-toggle.js' %}"></script>
-    <script src="{% static 'js/hamburger.js' %}"></script>
-    <script src="{% static 'js/goto-top-btn.js' %}"></script>
+    </div>
+    <button onclick="topFunction()" id="goto-top-btn" title="Go to top"><img
+            src="{% static 'img/icons/round_expand_less_black_24dp.png' %}" alt="goto-top-btn"></button>
+</section>
+<script src="{% static 'js/toggle-project-details.js' %}"></script>
+<script src="{% static 'js/dark-theme-toggle.js' %}"></script>
+<script src="{% static 'js/hamburger.js' %}"></script>
+<script src="{% static 'js/goto-top-btn.js' %}"></script>
 </body>
 
 </html>

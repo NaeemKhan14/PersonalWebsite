@@ -16,10 +16,10 @@
                     <h1>I am a <span class="highlight-text">full-stack developer</span> and <span
                             class="highlight-text">network & security</span> enthusiast.</h1>
                     </p>
-                    <span><a target="_blank" href="https://github.com/NaeemKhan14/"><img id="toggle-color"
-                                src="{% static 'img/icons/github.svg' %}" alt="Github"></a></span>
-                    <span><a target="_blank" href="https://www.linkedin.com/in/naeem-khan-/"><img id="toggle-color"
-                                src="{% static 'img/icons/linkedin.svg' %}" alt="Linkedin"></a></span>
+                    <span><a target="_blank" href="https://github.com/NaeemKhan14/">
+                        <img id="toggle-color" src="{% static 'img/icons/github.svg' %}" alt="Github"></a></span>
+                    <span><a target="_blank" href="https://www.linkedin.com/in/naeem-khan-">
+                        <img id="toggle-color" src="{% static 'img/icons/linkedin.svg' %}" alt="Linkedin"></a></span>
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
                 <div class="skills-intro">
                     <h1>Skills</h1>
                     <p>Here’s a list of things I am most proficient in. For a full list, please check out my <a
-                            href="#">CV here</a>.</p>
+                            href="{% static 'files/CV_Naeem_Khan.pdf' %}">CV here</a>.</p>
                 </div>
                 <div class="skill-cards-wrapper">
                     <div class="skill-card-body">
@@ -94,60 +94,123 @@
         </div>
     </section>
     <section class="s4">
-        <div class="main-container">
+        <div class="main-container" id='projects-sec'>
             <div class="projects-wrapper">
                 <div class="projects-top">
                     <div class="projects-title">
                         <h1>Selected Projects</h1>
+                        <div class="projects-description">
+                            <p>Here are a few projects that I have worked on.</p>
+                        </div>
                     </div>
-                    <div class="projects-description">
-                        <p>Here are a few projects that I have worked on. <a href="#">Click here</a> to view the full
-                            list of projects.</p>
-                    </div>
+
                 </div>
-                <div class="project-tiles">
-                    <div class="projects-row1">
-                        <div class="project-1">
-
-                        </div>
-                        <div class="project-2">
-
+                <div class="project-cards">
+                    <div class="card-wrapper">
+                        <div class="card-body">
+                            <button class="project-popup-btn" onclick="openNav('ghms')"><img
+                                    src="{% static 'img/medical.jpg' %}"></button>
+                            <div class="card-title">Global Health Management System</div>
+                            <div class="card-subtitle">Android Application (Disseration Project)</div>
+                            <div class="card-tags">Flutter | Dart | Android</div>
                         </div>
                     </div>
-                    <div class="projects-row2">
-                        <div class="project-3">
+                    <div class="card-wrapper">
+                        <div class="card-body">
+                            <button class="project-popup-btn" onclick="openNav('portfolio')"><img
+                                    src="{% static 'img/portfolio.png' %}"></button>
+                            <div class="card-title">Portfolio Website</div>
+                            <div class="card-subtitle">Website (Frontend/Backend)</div>
+                            <div class="card-tags">HTML | CSS | Javascript | Django | Python</div>
                         </div>
-                        <div class="project-4">
+                    </div>
+                    <div class="card-wrapper">
+                        <div class="card-body">
+                            <button class="project-popup-btn" onclick="openNav('media-server')"><img
+                                    src="{% static 'img/mediaserver.png' %}"></button>
+                            <div class="card-title">Home Media Server</div>
+                            <div class="card-subtitle">DLNA Server With File Management</div>
+                            <div class="card-tags">PHP | Bash</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div id="ghms" class="overlay-card">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav('ghms')">&times;</a>
+            <div class="overlay-card-wrapper">
+                <div class="overlay-card-content">
+                    <img src="{% static 'img/medical.jpg' %}" alt="ghms">
+                    <h3>Global Health Management System</h3>
+                    <p><strong style="font-weight: 600;">Description:</strong> This was my 4th year disseration project.
+                        The goal of this project is to centeralize the users' medical records into one database where
+                        they can be accessed by authorized medical professionals in case of emergency. <a
+                                href="{% static 'files/Final Year Dissertation (Naeem Khan).pdf' %}">Click
+                            here</a> to download the complete project specifications.</p>
+                </div>
+            </div>
+        </div>
+        <div id="portfolio" class="overlay-card">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav('portfolio')">&times;</a>
+            <div class="overlay-card-wrapper">
+                <div class="overlay-card-content">
+                    <img src="{% static 'img/portfolio.png' %}" alt="portfolio website">
+                    <h3>Portfolio Website</h3>
+                    <p><strong style="font-weight: 600;">Description:</strong> This website was created from scratch
+                        using HTML/CSS and Javascript. The website's backend is developed using Django and it is hosted
+                        on Heroku. The complete timeline of my progress can be found on my github page <a
+                                href="https://github.com/NaeemKhan14/PorfolioWebsiteTemplate" target="_blank">here
+                            (front-end)</a> and <a href="https://github.com/NaeemKhan14/PersonalWebsite"
+                                                   target="_blank">here (back-end)</a></p>
+                </div>
+            </div>
+        </div>
+        <div id="media-server" class="overlay-card">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav('media-server')">&times;</a>
+            <div class="overlay-card-wrapper">
+                <div class="overlay-card-content">
+                    <img src="{% static 'img/mediaserver.png' %}" alt="mediaserver">
+                    <h3>Media Server</h3>
+                    <p><strong style="font-weight: 600;">Description:</strong> This home media server is designed to be
+                        run on a Raspberry Pi (3b or newer versions) to stream media content such as videos, pictures
+                        and music over any DLNA compatible device over the network. It uses a torrent client to download
+                        content directly to an external HDD attached to the RPi, from where any user on the network can
+                        stream that content on a DLNA compatible device such as any smart TV. A detailed guide and other
+                        information can be found on the github page <a
+                                href="https://github.com/NaeemKhan14/DLNA-Home-Media-Server" target="_blank">here</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+
     </section>
     <section class='s5'>
         <div class="main-container">
             <div class="contact-wrapper">
                 <div class="contact-info">
                     <h1 style="margin:0;">Contact Me</h1>
-                    <p><h5 style="margin-top: 0;">Have a query? Contact me!</h5></p>
+                    <p>
+                    <h5 style="margin-top: 0;">Have a query? Contact me!</h5>
+                    </p>
                     <div class="info">
                         <ul>
                             <li><span class="material-icons material-icons-round info-icon">call</span> +971526698242
                             </li>
                             <li><span class="material-icons material-icons-round info-icon">mail_outline</span>
-                                naeemukhan14@gmail.com</li>
+                                naeemukhan14@gmail.com
+                            </li>
                         </ul>
                     </div>
                 </div>
                 <div class="contact-form">
                     <form action="#">
-                        <input type="text" name="full_name" placeholder="Full name" />
-                        <input type="email" name="email_field" placeholder="John.doe@example.com" />
-                        <input type="tel" name="phone_num" placeholder="+971526698242" />
+                        <input type="text" name="full_name" placeholder="Full name"/>
+                        <input type="email" name="email_field" placeholder="John.doe@example.com"/>
+                        <input type="tel" name="phone_num" placeholder="+971526698242"/>
                         <textarea name="user_msg" placeholder="Enter your message here..." cols="15"
-                            rows="5"></textarea>
+                                  rows="5"></textarea>
                         <br>
-                        <input type="submit" value="Submit" />
+                        <input type="submit" value="Submit"/>
                     </form>
                 </div>
             </div>
