@@ -123,10 +123,10 @@ Misc
     -webkit-box-shadow: 5px 2px 15px -4px #000000; 
     box-shadow: 5px 2px 15px -4px #000000;
   }
-  
-  #myBtn:hover {
-    background-color: #555;
-  }
+
+.alert {
+    text-align: center;
+}
 /*******
 Sections
 ********/
@@ -344,6 +344,7 @@ Projects
     margin: 1%;
     line-height: 1rem;
 }
+.card-body { padding: 0; }
 .card-body>button>img {
     max-height: 234px;
     width: 100%;

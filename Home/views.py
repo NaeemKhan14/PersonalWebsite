@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.core.mail import send_mail, BadHeaderError
 from django.shortcuts import render, redirect
 from .forms import ContactForm
@@ -14,16 +15,19 @@ class Home(TemplateView):
         form = ContactForm(request.POST)
 
         if form.is_valid():
-            body = {
-                'Name: ': form.cleaned_data['full_name'],
-                'Email: ': form.cleaned_data['email_address'],
-                'Phone Number: ': form.cleaned_data['phone_number'],
-                'Message: ': form.cleaned_data['message']
-            }
-            message = "\n".join(body.values())
+            message = "Name: " + form.cleaned_data['full_name'] + "\nEmail: " + form.cleaned_data[
+                'email_address'] + "\nPhone Number: " + form.cleaned_data['email_address'] + "\nMessage: " + \
+                      form.cleaned_data['message']
 
             try:
                 send_mail("Message from naeemkhan.dev", message, 'noreply@naeemkhan.dev', ['naeemukhan14@gmail.com'])
-                return render(request, self.template_name, {'form': ContactForm()})
+                messages.add_message(request, messages.SUCCESS,
+                                     'Message sent successfully! I will get back to you as soon as possible.')
             except BadHeaderError:
-                return render(request, self.template_name, {'form': ContactForm()})
+                messages.add_message(request, messages.ERROR,
+                                     'Something went wrong. Please contact me at naeemukhan14@gmail.com.')
+        else:
+            messages.add_message(request, messages.ERROR,
+                                 'Please provide phone number in correct format. For example: +971526698242.')
+
+        return redirect('homepage')
