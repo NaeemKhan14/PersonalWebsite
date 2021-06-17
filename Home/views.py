@@ -16,7 +16,7 @@ class Home(TemplateView):
 
         if form.is_valid():
             message = "Name: " + form.cleaned_data['full_name'] + "\nEmail: " + form.cleaned_data[
-                'email_address'] + "\nPhone Number: " + form.cleaned_data['email_address'] + "\nMessage: " + \
+                'email_address'] + "\nPhone Number: " + form.cleaned_data['phone_number'] + "\nMessage: " + \
                       form.cleaned_data['message']
 
             try:
